@@ -1,5 +1,6 @@
 package org.lessons.java;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class TicketTrain {
@@ -20,12 +21,18 @@ public class TicketTrain {
 
         if (userAge <= 18) {
             double finalPrice = ticketPrice * underageDiscount;
-            System.out.println("Il prezzo con sconto minorenni applicato è uguale a " + finalPrice + " €");
+            DecimalFormat df = new DecimalFormat("#.##");
+            String formattedPrice = df.format(finalPrice);
+            System.out.println("Il prezzo con sconto minorenni applicato è uguale a " + formattedPrice + " €");
         } else if (userAge >= 65) {
             double finalPrice = ticketPrice * overageDiscount;
-            System.out.println("Il prezzo con sconto over 65 applicato è uguale a " + finalPrice + " €");
+            DecimalFormat df = new DecimalFormat("#.##");
+            String formattedPrice = df.format(finalPrice);
+            System.out.println("Il prezzo con sconto over 65 applicato è uguale a " + formattedPrice + " €");
         } else {
-            System.out.println("Il prezzo da pagare è uguale a " + ticketPrice + " €");
+            DecimalFormat df = new DecimalFormat("#.##");
+            String formattedPrice = df.format(ticketPrice);
+            System.out.println("Il prezzo da pagare è uguale a " + formattedPrice + " €");
         }
     }
 }
