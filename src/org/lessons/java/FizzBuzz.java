@@ -7,23 +7,27 @@ public class FizzBuzz {
         // Scanner
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Inserisci un numero compreso tra 1 e 1000");
-        int userInput = scanner.nextInt();
+        try {
+            System.out.println("Inserisci un numero compreso tra 1 e 1000");
+            int userInput = scanner.nextInt();
 
-        if (userInput < 1 || userInput > 1000) {
-            System.out.println("Numero non valido");
-        } else {
-            for (int i = 1; i <= userInput; i++) {
-                if (i % 3 == 0 && i % 5 == 0) {
-                    System.out.print("FizzBuzz ");
-                } else if (i % 3 == 0) {
-                    System.out.print("Fizz ");
-                } else if (i % 5 == 0) {
-                    System.out.print("Buzz ");
-                } else {
-                    System.out.print(i + " ");
+            if (userInput < 1 || userInput > 1000) {
+                System.out.println("Numero non valido");
+            } else {
+                for (int i = 1; i <= userInput; i++) {
+                    if (i % 3 == 0 && i % 5 == 0) {
+                        System.out.print("FizzBuzz ");
+                    } else if (i % 3 == 0) {
+                        System.out.print("Fizz ");
+                    } else if (i % 5 == 0) {
+                        System.out.print("Buzz ");
+                    } else {
+                        System.out.print(i + " ");
+                    }
                 }
             }
+        } catch (Exception e) {
+            System.out.println("Ti ho chiesto un numero... Riavvia e riprova");
         }
     }
 }
